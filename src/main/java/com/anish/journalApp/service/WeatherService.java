@@ -2,6 +2,7 @@ package com.anish.journalApp.service;
 
 import com.anish.journalApp.api.response.WeatherResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
@@ -10,7 +11,8 @@ import org.springframework.web.client.RestTemplate;
 @Component
 public class WeatherService {
 
-    private final static String apiKey = "bf0aeaa05902719c1c5a6d3c3898c5ce";
+    @Value("weather.api.key")
+    private static String apiKey;
 
     private final static String url = "https://api.weatherstack.com/current";
 //    private final static String url = "https://api.weatherstack.com/current?access_key=API_KEY&query=CITY";
