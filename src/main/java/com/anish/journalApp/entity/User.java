@@ -59,4 +59,6 @@ public class User {
     @DBRef
     private List<JournalEntry> journalEntryList = new ArrayList<JournalEntry>();
     private List<String> roles;
+    private String email;
+    private boolean sentimentAnalysis;
 }
